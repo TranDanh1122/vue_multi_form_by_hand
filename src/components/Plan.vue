@@ -1,16 +1,26 @@
 <script setup lang="ts">
+import type { PlanData } from '@/type';
+import { Field, useField } from 'vee-validate';
+import { watch } from 'vue';
+defineProps<{ name: string, plan: PlanData }>()
 </script>
 <template>
-            <div :class="`rounded-lg w-full px-4 py-5 border-[1px] border-solid mb:flex mb:items-center mb:gap-4 mb:justify-start ${'border-[var(--light-gray)]'}
-                ${'border-[var(--purplish-blue)] bg-[var(--magnolia)]'}`">
-            <img src="" alt="" class="w-10 h-10 object-cover rounded-full" />
+    <Field :name="name" v-slot="{ field, setValue }">
+        <div @click="() => { setValue({ name: plan.name, price: plan.computedPrice }) }" :class="`rounded-lg w-full px-4 py-5 border border-solid 
+                mb:flex mb:items-center mb:gap-4 mb:justify-start cursor-pointer
+                ${(field.value?.name ?? '') == plan.name ? 'border-purple bg-very_light_grey' : 'border-border'}`">
+
+
+            <img :src="plan.image" :alt="plan.name" class="w-10 h-10 object-cover rounded-full" />
             <div>
-                <h2 class="text-[var(--marine-blue)] font-medium mt-10">{title}</h2>
-                <span class=" text-[var(--cool-gray)] block">${duration == "0" ? monthvalue : yearvalue}/{duration == "0" ? "mo" : "yr"}</span>
-                <span :class="`body-s text-[var(--marine-blue)] transition-opacity duration-150 ease-linear 
-                    ${'opacity-0'}
-                    ${'opacity-100'}`">2 months free</span>
+                <h2 class="text-denim font-medium mt-10">{{ plan.name }}</h2>
+                <span class=" text-grey block">{{ plan.computedPriceStr }}</span>
+                <span
+                    :class="`body-s text-denim transition-opacity duration-150 ease-linear ${plan.bonus ? 'opacity-100' : 'opacity-0'}`">
+                    {{ plan.bonus }}</span>
             </div>
 
         </div>
+    </Field>
+
 </template>
