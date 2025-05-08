@@ -26,7 +26,7 @@ const formatedData = computed(() => {
             <h1 class="text-denim heading">Select your plan</h1>
             <p class="l text-grey">You have the option of monthly or yearly billing.</p>
         </div>
-        <div class="flex gap-4 mb:flex-col ">
+        <div class="flex gap-4 md:flex-row flex-col ">
 
             <Plan name="plan" v-for="(plan) in formatedData" :plan="plan" :key="plan.name" />
         </div>

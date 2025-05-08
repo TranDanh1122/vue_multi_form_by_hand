@@ -6,8 +6,8 @@ defineProps<StepProps>()
 </script>
 <template>
     <div class='flex items-center justify-start gap-4'>
-        <slot name="step"></slot>
-        <div class='flex flex-col uppercase mb:hidden'>
+        <slot  name="step"></slot>
+        <div class='md:flex flex-col uppercase hidden'>
             <h3 class='text-light_blue body_s'>Step {{ step }}
             </h3>
             <h2 class='text-white font-bold body_m tracking-[1px]'>

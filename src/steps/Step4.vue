@@ -10,6 +10,8 @@ const total = computed(() => {
 const unit = computed(() => {
     return props.values.duration == '1' ? 'yr' : 'mo'
 })
+const emit = defineEmits()
+
 </script>
 <template>
     <div class='flex flex-col gap-6'>
@@ -23,7 +25,7 @@ const unit = computed(() => {
                     <div>
                         <h2 class=' font-medium text-denim capitalize'>{{ values.plan.name }} ({{ values.duration == "1"
                             ? "Yearly" : "Monthly" }})</h2>
-                        <span class='underline body_m text-grey cursor-pointer hover:text-purple'>Change</span>
+                        <span @click="emit('changeAction')" class='underline body_m text-grey cursor-pointer hover:text-purple'>Change</span>
                     </div>
                     <span class='font-bold'>${{ values.plan.price }}/{{ unit }} </span>
                 </div>

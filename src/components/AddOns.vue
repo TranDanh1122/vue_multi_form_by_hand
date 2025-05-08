@@ -19,7 +19,7 @@ const handleClick = (addOns: ExtraData[], newVal: ExtraData) => {
 </script>
 <template>
     <Field :name="name" v-slot="{ field }">
-        <div @click="handleClick(field.value, { name: addon.name, price: addon.computedPrice ?? '' })" :class="`cursor-pointer flex justify-start items-center px-6 py-5 gap-6 w-full border rounded-lg
+        <div @click="handleClick(field.value, { name: addon.name, price: addon.computedPrice ?? '' })" :class="`cursor-pointer flex justify-start items-center md:px-6 md:py-5 p-3 gap-6 w-full border rounded-lg
             ${isPicked ? 'border-purple bg-very_light_grey' : 'border-grey'}`">
             <div :class="`size-5 rounded-sm flex items-center justify-center ${isPicked ? 'bg-purple' : 'bg-white border border-border'} `">
                 <img v-if="isPicked" src="/images/icon-checkmark.svg" alt="object-cover size-2.5">

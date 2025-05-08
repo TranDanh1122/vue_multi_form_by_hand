@@ -9,7 +9,7 @@ const formatedData = computed(() => {
     return ADDONS_DATA.map((el) => {
         const priceByDuration = duration.value == 0 ? el.price : el.priceYrs
         const formattedPrice = formatPrice(priceByDuration)
-        const priceStr = `${formattedPrice}/${duration.value == 0 ? "mth" : "yrs"}`
+        const priceStr = `${formattedPrice}/${duration.value == 0 ? "mo" : "yr"}`
         return {
             ...el,
             computedPrice: priceByDuration,
