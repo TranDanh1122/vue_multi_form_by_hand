@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { PlanData } from '@/type';
-import { Field, useField } from 'vee-validate';
-import { watch } from 'vue';
+import { Field } from 'vee-validate';
 defineProps<{ name: string, plan: PlanData }>()
 </script>
 <template>

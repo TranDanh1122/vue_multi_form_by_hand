@@ -2,7 +2,7 @@
 import { useField, useForm } from "vee-validate";
 import { Step } from "../components"
 import { step1Schema, step2Schema } from "@/schema/schema";
-import { computed, reactive, ref, watch, watchEffect } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 import * as yup from 'yup'
 import type { AddOnData, ExtraData, FormData } from "@/type";
 import { ADDONS_DATA, PLAN_DATA } from "@/ults/const";
