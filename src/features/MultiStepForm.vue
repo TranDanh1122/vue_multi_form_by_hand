@@ -77,7 +77,7 @@ watch(duration, (newDuration) => {
 }, { flush: 'sync' })
 </script>
 <template>
-    <div class="md:w-3/5 w-[90%] md:h-6/7 h-max md:min-h-[600px] bg-white rounded-lg flex md:flex-row flex-col  justify-start">
+    <div class="md:w-3/5 w-[90%] md:h-6/7 min-h-max md:min-h-[600px] bg-white rounded-lg flex md:flex-row flex-col  justify-start">
         <div class='md:w-1/3 w-full 
         md:bg-[url(/images/bg-sidebar-desktop.svg)] 
         bg-cover bg-no-repeat bg-center
