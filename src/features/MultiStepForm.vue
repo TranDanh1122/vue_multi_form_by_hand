@@ -79,9 +79,9 @@ watch(duration, (newDuration) => {
 <template>
     <div class="md:w-3/5 w-[90%] md:h-6/7 h-max md:min-h-[600px] bg-white rounded-lg flex md:flex-row flex-col  justify-start">
         <div class='md:w-1/3 w-full 
-        md:bg-[url(./images/bg-sidebar-desktop.svg)] 
+        md:bg-[url(/images/bg-sidebar-desktop.svg)] 
         bg-cover bg-no-repeat bg-center
-        bg-[url(./images/bg-sidebar-mobile.svg)] 
+        bg-[url(/images/bg-sidebar-mobile.svg)] 
         h-full flex md:flex-col flex-row gap-8 px-8 py-10 justify-center md:justify-start'>
             <Step v-for="(step) in steps" :step="step.step" :title="step.title">
                 <template v-slot:step>
